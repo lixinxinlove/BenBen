@@ -21,6 +21,7 @@ import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
 import com.lixinxin.benben.ui.screen.BenBenNavHost
 import com.lixinxin.benben.ui.theme.BenBenTheme
+import com.lixinxin.benben.ui.theme.CustomTheme
 import com.lixinxin.benben.ui.viewmodel.CategoryViewModel
 import com.lixinxin.benben.ui.viewmodel.RecordViewModel
 import com.lixinxin.benben.work.LeeWork
@@ -34,11 +35,11 @@ class MainActivity : ComponentActivity() {
     val categoryVM by viewModels<CategoryViewModel>()
     val recordVM by viewModels<RecordViewModel>()
 
-    @OptIn(ExperimentalAnimationApi::class)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            BenBenTheme {
+            CustomTheme {
 
                 // A surface container using the 'background' color from the theme
                 Surface(
