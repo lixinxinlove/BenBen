@@ -30,25 +30,25 @@ fun BenBenNavHost(
             enterTransition = {
                 slideIntoContainer(
                     AnimatedContentScope.SlideDirection.Left,
-                    animationSpec = tween(700)
+                    animationSpec = tween(200)
                 )
             },
             exitTransition = {
                 slideOutOfContainer(
                     AnimatedContentScope.SlideDirection.Left,
-                    animationSpec = tween(700)
+                    animationSpec = tween(200)
                 )
             },
             popEnterTransition = {
                 slideIntoContainer(
                     AnimatedContentScope.SlideDirection.Up,
-                    animationSpec =tween(700)
+                    animationSpec =tween(200)
                 )
             },
             popExitTransition = {
                 slideOutOfContainer(
                     AnimatedContentScope.SlideDirection.Left,
-                    animationSpec = tween(700)
+                    animationSpec = tween(200)
                 )
             }
 
@@ -61,13 +61,13 @@ fun BenBenNavHost(
             enterTransition = {
                 slideIntoContainer(
                     AnimatedContentScope.SlideDirection.Left,
-                    animationSpec = tween(700)
+                    animationSpec = tween(200)
                 )
             },
             exitTransition = {
                 slideOutOfContainer(
                     AnimatedContentScope.SlideDirection.Left,
-                    animationSpec = tween(700)
+                    animationSpec = tween(200)
                 )
             }
         ) {
@@ -79,13 +79,13 @@ fun BenBenNavHost(
             enterTransition = {
                 slideIntoContainer(
                     AnimatedContentScope.SlideDirection.Left,
-                    animationSpec = tween(700)
+                    animationSpec = tween(200)
                 )
             },
             exitTransition = {
                 slideOutOfContainer(
                     AnimatedContentScope.SlideDirection.Left,
-                    animationSpec = tween(700)
+                    animationSpec = tween(200)
                 )
             }
         ) {
@@ -97,13 +97,13 @@ fun BenBenNavHost(
             enterTransition = {
                 slideIntoContainer(
                     AnimatedContentScope.SlideDirection.Left,
-                    animationSpec = tween(700)
+                    animationSpec = tween(200)
                 )
             },
             exitTransition = {
                 slideOutOfContainer(
                     AnimatedContentScope.SlideDirection.Left,
-                    animationSpec = tween(700)
+                    animationSpec = tween(200)
                 )
             }
         ) {
@@ -115,13 +115,13 @@ fun BenBenNavHost(
             enterTransition = {
                 slideIntoContainer(
                     AnimatedContentScope.SlideDirection.Left,
-                    animationSpec = tween(700)
+                    animationSpec = tween(200)
                 )
             },
             exitTransition = {
                 slideOutOfContainer(
                     AnimatedContentScope.SlideDirection.Left,
-                    animationSpec = tween(700)
+                    animationSpec = tween(200)
                 )
             }
         ) {
