@@ -25,7 +25,7 @@ fun CanvasDemo02() {
             val linePath = android.graphics.Path()
             val linePath2 = android.graphics.Path()
 
-            val listData = listOf(100, 500, 200, 180, 400, 100, 800, 100, 700, 200)
+            val listData = listOf(0, 500, 200, 180, 400, 100, 800, 300, 700, 0)
             val mWith = 100f
             val left = 80f
 
