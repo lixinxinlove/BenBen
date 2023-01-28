@@ -25,19 +25,82 @@ fun CanvasDemo02() {
             val linePath = android.graphics.Path()
             val linePath2 = android.graphics.Path()
 
-            val listData = listOf(0, 500, 200, 180, 400, 100, 800, 300, 700, 0)
+            val listData = listOf(100, 500, 200, 180, 400, 100, 800, 300, 700, 350)
             val mWith = 100f
-            val left = 80f
+            val mLeft = 100f
 
-            linePath.moveTo(0f + left, 0f)
-            linePath2.moveTo(0f + left, listData[0] * 1f)
+            linePath.moveTo(0f +mLeft, 0f)
+            linePath.moveTo(0f +mLeft, listData[0] * 1f)
+
+            linePath2.moveTo(0f +mLeft, listData[0] * 1f)
             for (index in 0 until listData.size) {
-                linePath.lineTo(index * mWith + left, listData[index] * 1f)
-                linePath2.lineTo(index * mWith + left, listData[index] * 1f)
+              //  linePath.lineTo(index * mWith , listData[index] * 1f)
+               // linePath2.lineTo(index * mWith +, listData[index] * 1f)
             }
 
-            linePath.lineTo(mWith * (listData.size - 1) + left, 0f)
-            linePath.lineTo(0f, 0f)
+            for (index in 0 until listData.size - 1) {
+                val xMoveDistance = 20
+                val yMoveDistance = 40
+
+                if (listData[index] == listData[index + 1]) {
+                    linePath.lineTo(mWith*(index+1) +mLeft,listData[index + 1]*1f )
+                    linePath2.lineTo(mWith*(index+1)+mLeft ,listData[index + 1]*1f )
+                } else if (listData[index] < listData[index + 1]) {//y1<y2情况
+                    val centerX = (mWith * index + mWith * (1 + index)) / 2
+                    val centerY =
+                        (listData[index].toFloat()  + listData[index + 1].toFloat() ) / 2
+                    val controX0 = (mWith * index + centerX) / 2
+                    val controY0 = (listData[index].toFloat()  + centerY) / 2
+                    val controX1 = (centerX + mWith * (1 + index)) / 2
+                    val controY1 = (centerY + listData[index + 1].toFloat() ) / 2
+                    linePath.cubicTo(
+                        controX0 + xMoveDistance+mLeft,
+                        controY0 - yMoveDistance,
+                        controX1 - xMoveDistance+mLeft,
+                        controY1 + yMoveDistance,
+                        mWith * (1 + index)+mLeft,
+                        listData[index + 1].toFloat()
+                    )
+
+                    linePath2.cubicTo(
+                        controX0 + xMoveDistance+mLeft,
+                        controY0 - yMoveDistance,
+                        controX1 - xMoveDistance+mLeft,
+                        controY1 + yMoveDistance,
+                        mWith * (1 + index)+mLeft,
+                        listData[index + 1].toFloat()
+                    )
+                } else {
+                    val centerX = (mWith * index + mWith * (1 + index)) / 2
+                    val centerY =
+                        (listData[index].toFloat()  + listData[index + 1].toFloat() ) / 2
+                    val controX0 = (mWith * index + centerX) / 2
+                    val controY0 = (listData[index].toFloat()  + centerY) / 2
+                    val controX1 = (centerX + mWith * (1 + index)) / 2
+                    val controY1 = (centerY + listData[index + 1].toFloat() ) / 2
+                    linePath.cubicTo(
+                        controX0 + xMoveDistance+mLeft,
+                        controY0 + yMoveDistance,
+                        controX1 - xMoveDistance+mLeft,
+                        controY1 - yMoveDistance,
+                        mWith * (1 + index)+mLeft,
+                        listData[index + 1].toFloat()
+                    )
+
+                    linePath2.cubicTo(
+                        controX0 + xMoveDistance+mLeft,
+                        controY0 + yMoveDistance,
+                        controX1 - xMoveDistance+mLeft,
+                        controY1 - yMoveDistance,
+                        mWith * (1 + index)+mLeft,
+                        listData[index + 1].toFloat()
+                    )
+                }
+            }
+
+
+            linePath.lineTo(mWith * (listData.size - 1)+mLeft , 0f)
+            linePath.lineTo(0f+mLeft, 0f)
 
             val linearGradient = LinearGradient(
                 0f, 800f,
@@ -70,7 +133,7 @@ fun CanvasDemo02() {
             //画圈。
             for (index in 0 until listData.size) {
                 it.nativeCanvas.drawCircle(
-                    mWith * index+left,
+                    mWith * index+mLeft,
                      listData[index]*1f,
                     8f,
                     linePaint
@@ -79,7 +142,6 @@ fun CanvasDemo02() {
 
         }
     }
-
 
 }
 

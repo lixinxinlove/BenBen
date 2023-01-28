@@ -5,16 +5,23 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.TextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -51,7 +58,7 @@ fun HomeScreen(navController: NavHostController, categoryVM: CategoryViewModel) 
             }
 
             Button(onClick = { navController.navigate(ScreenRoute.GesturesRoute.route) }) {
-                Text(text = "手势")
+                Text(text = "手势", fontSize = 20.sp)
             }
 
             Button(onClick = { navController.navigate("add_record") }) {
@@ -74,6 +81,30 @@ fun HomeScreen(navController: NavHostController, categoryVM: CategoryViewModel) 
             }) {
                 Text(text = "查看全部分类")
             }
+
+
+
+
+            Text(
+                text = "测试".repeat(50),
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis,
+                style = TextStyle(
+                    fontSize = 30.sp, color = Color.Green,
+                    shadow = Shadow(color = Color.Blue, offset = Offset.Zero, blurRadius = 3f)
+                )
+            )
+
+            var text by remember {
+                mutableStateOf("")
+            }
+
+            TextField(
+                value = text,
+                onValueChange = { text = it },
+                label = { Text("name") },
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+            )
 
 
             LazyColumn(

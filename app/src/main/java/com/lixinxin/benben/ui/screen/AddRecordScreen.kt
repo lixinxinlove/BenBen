@@ -1,5 +1,6 @@
 package com.lixinxin.benben.ui.screen
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -17,25 +18,22 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.ViewModel
 import androidx.navigation.NavHostController
-import com.lixinxin.benben.App
 import com.lixinxin.benben.db.data.RecordData
 import com.lixinxin.benben.ui.viewmodel.RecordViewModel
-import kotlinx.coroutines.flow.collect
 
 /**
  * 添加记录
  */
+
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddRecordScreen(navController: NavHostController, recordVM: RecordViewModel) {
 
 
-    Scaffold(
-        topBar = { Text(text = "添加消费记录") },
+    Scaffold(topBar = { Text(text = "添加消费记录") },
     ) {
-
 
         Surface(
             modifier = Modifier
