@@ -6,4 +6,5 @@ sealed class ScreenRoute(val route:String){
     object AddRecordRoute:ScreenRoute("add_record")
     object CanvasRoute:ScreenRoute("canvas")
     object GesturesRoute:ScreenRoute("gestures")
+    object DraggableRoute:ScreenRoute("draggable")
 }

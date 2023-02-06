@@ -83,6 +83,10 @@ fun HomeScreen(navController: NavHostController, categoryVM: CategoryViewModel) 
             }
 
 
+            Button(onClick = { navController.navigate(ScreenRoute.DraggableRoute.route) }) {
+                Text(text = "拖动", fontSize = 20.sp)
+            }
+
 
 
             Text(

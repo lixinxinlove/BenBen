@@ -128,6 +128,24 @@ fun BenBenNavHost(
             GesturesScreen()
         }
 
+        composable(
+            route = ScreenRoute.DraggableRoute.route,
+            enterTransition = {
+                slideIntoContainer(
+                    AnimatedContentScope.SlideDirection.Left,
+                    animationSpec = tween(200)
+                )
+            },
+            exitTransition = {
+                slideOutOfContainer(
+                    AnimatedContentScope.SlideDirection.Left,
+                    animationSpec = tween(200)
+                )
+            }
+        ) {
+            DraggableScreen()
+        }
+
     }
 
 }
