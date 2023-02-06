@@ -141,9 +141,24 @@ fun BenBenNavHost(
                     AnimatedContentScope.SlideDirection.Left,
                     animationSpec = tween(200)
                 )
+            },
+
+            popEnterTransition = {
+                slideIntoContainer(
+                    AnimatedContentScope.SlideDirection.Left,
+                    animationSpec =tween(2000)
+                )
+            },
+            popExitTransition = {
+                slideOutOfContainer(
+                    AnimatedContentScope.SlideDirection.Right,
+                    animationSpec = tween(2000)
+                )
             }
+
+
         ) {
-            DraggableScreen()
+            DraggableScreen(navController,"leeeeeeeeeeeee",99)
         }
 
     }

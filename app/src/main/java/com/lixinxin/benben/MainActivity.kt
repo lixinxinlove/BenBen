@@ -19,6 +19,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.work.Constraints
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
+import com.lixinxin.benben.ui.screen.AppNavHost
 import com.lixinxin.benben.ui.screen.BenBenNavHost
 import com.lixinxin.benben.ui.theme.BenBenTheme
 import com.lixinxin.benben.ui.theme.CustomTheme
@@ -46,7 +47,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    BenBenNavHost(categoryVM, recordVM)
+                  //  BenBenNavHost(categoryVM, recordVM)
+                    AppNavHost(categoryVM, recordVM)
                 }
             }
         }
